@@ -1,0 +1,40 @@
+{% extends 'shop/base.html' %}
+{% block title %} Contact Page{% endblock %}
+{% block style %}
+<style>
+    .contact{
+    margin-left: 150px;
+    margin-top:15px;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="contact">You can contact us at 8307470994</div>
+<div class="contact">Or you can email us at <a href="mailto:bhanuprakash2207@gmail.com">Email Us</a></div>
+<div class="contact">You can also reach us at Rewari, Haryana,IN(123401)</div>
+
+<br>
+<br>
+<div class="container">
+    <h3>Please provide your details and we will contact you within 4 hrs.</h3>
+    <form action="/shop/contact/" method="post">{% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your contact no">
+        </div>
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock %}
